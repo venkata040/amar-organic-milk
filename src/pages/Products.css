@@ -1,0 +1,20 @@
+.products-page{
+    padding:60px;
+    text-align:center;
+}
+
+.products-page h1{
+    color:#2E7D32;
+    margin-bottom:30px;
+    font-size:48px;
+}
+
+.search-box{
+    width:400px;
+    max-width:90%;
+    padding:15px;
+    font-size:18px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    margin-bottom:40px;
+}

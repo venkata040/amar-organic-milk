@@ -1,0 +1,52 @@
+.about-section{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:80px;
+    background:#ffffff;
+    gap:60px;
+}
+
+.about-image{
+    flex:1;
+    font-size:220px;
+    text-align:center;
+}
+
+.about-content{
+    flex:1;
+}
+
+.about-content h2{
+    font-size:42px;
+    color:#2E7D32;
+    margin-bottom:25px;
+}
+
+.about-content p{
+    font-size:18px;
+    color:#555;
+    line-height:32px;
+    margin-bottom:20px;
+}
+
+.about-features p{
+    font-weight:600;
+    color:#2E7D32;
+    margin:12px 0;
+}
+
+.learn-more-btn{
+    margin-top:20px;
+    padding:15px 35px;
+    background:#2E7D32;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.learn-more-btn:hover{
+    background:#1B5E20;
+}
