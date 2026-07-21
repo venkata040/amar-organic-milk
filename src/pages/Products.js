@@ -1,20 +1,16 @@
-import "./Products.css";
 import ProductList from "../components/products/ProductList";
 
-function Products() {
+function Products({ cart, setCart }) {
   return (
-    <div className="products-page">
+    <div>
+      <h1 style={{ textAlign: "center", marginTop: "30px" }}>
+        Our Organic Products
+      </h1>
 
-      <h1>Our Organic Products</h1>
-
-      <input
-        type="text"
-        placeholder="🔍 Search Products..."
-        className="search-box"
+      <ProductList
+        cart={cart}
+        setCart={setCart}
       />
-
-      <ProductList />
-
     </div>
   );
 }

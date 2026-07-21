@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/layout/Navbar";
@@ -13,19 +14,41 @@ import Register from "./pages/Register";
 import Cart from "./pages/Cart";
 
 function App() {
+  // Shopping Cart State
+  const [cart, setCart] = useState([]);
+
   return (
     <>
-      <Navbar />
+      <Navbar cart={cart} />
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products />} />
+
+        <Route
+          path="/products"
+          element={
+            <Products
+              cart={cart}
+              setCart={setCart}
+            />
+          }
+        />
+
         <Route path="/subscription" element={<Subscription />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/cart" element={<Cart />} />
+
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              cart={cart}
+              setCart={setCart}
+            />
+          }
+        />
       </Routes>
 
       <Footer />

@@ -1,21 +1,36 @@
 import "./ProductCard.css";
 
-function ProductCard({ name, price, description }) {
+function ProductCard({
+  image,
+  name,
+  description,
+  price,
+  product,
+  cart,
+  setCart,
+}) {
+
+  const handleAddToCart = () => {
+  setCart([...cart, product]);
+};
+
   return (
     <div className="product-card">
+      <img
+        src={image}
+        alt={name}
+        className="product-image"
+      />
 
-      <div className="product-image">
-        🥛
-      </div>
-
-      <h2>{name}</h2>
+      <h3>{name}</h3>
 
       <p>{description}</p>
 
-      <h3>{price}</h3>
+      <h4>{price}</h4>
 
-      <button>Add to Cart</button>
-
+      <button onClick={handleAddToCart}>
+        Add to Cart
+      </button>
     </div>
   );
 }
