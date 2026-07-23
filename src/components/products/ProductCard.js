@@ -1,36 +1,57 @@
 import "./ProductCard.css";
 
-function ProductCard({
-  image,
-  name,
-  description,
-  price,
-  product,
-  cart,
-  setCart,
-}) {
-
+function ProductCard({ product, cart, setCart }) {
   const handleAddToCart = () => {
-  setCart([...cart, product]);
-};
+    const existingProduct = cart.find(
+      (item) => item.id === product.id
+    );
+
+    if (existingProduct) {
+      const updatedCart = cart.map((item) =>
+        item.id === product.id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      );
+
+      setCart(updatedCart);
+    } else {
+      setCart([
+        ...cart,
+        {
+          ...product,
+          quantity: 1,
+        },
+      ]);
+    }
+  };
 
   return (
     <div className="product-card">
+
+      <div className="product-badge">
+        🌿 Organic
+      </div>
+
       <img
-        src={image}
-        alt={name}
+        src={product.image}
+        alt={product.name}
         className="product-image"
       />
 
-      <h3>{name}</h3>
+      <h2>{product.name}</h2>
 
-      <p>{description}</p>
+      <div className="rating">
+        ⭐⭐⭐⭐⭐ <span>(4.9)</span>
+      </div>
 
-      <h4>{price}</h4>
+      <p>{product.description}</p>
+
+      <h3>{product.price}</h3>
 
       <button onClick={handleAddToCart}>
-        Add to Cart
+        🛒 Add to Cart
       </button>
+
     </div>
   );
 }
