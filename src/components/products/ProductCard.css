@@ -1,40 +1,159 @@
-.product-card{
-    width:260px;
-    background:#F8F9FA;
-    padding:30px;
-    border-radius:12px;
-    text-align:center;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
+/* ==========================
+   PREMIUM PRODUCT CARD
+========================== */
+
+.product-card {
+
+    width: 300px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+
+    transition: .3s;
+
+    position: relative;
+
+    overflow: hidden;
+
 }
 
-.product-image{
-    font-size:90px;
+.product-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 15px 35px rgba(0,0,0,.15);
+
 }
 
-.product-card h2{
-    color:#2E7D32;
-    margin:20px 0 10px;
+/* Badge */
+
+.product-badge {
+
+    position: absolute;
+
+    top: 15px;
+
+    left: 15px;
+
+    background: #2E7D32;
+
+    color: white;
+
+    padding: 6px 14px;
+
+    border-radius: 20px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
 }
 
-.product-card p{
-    color:#555;
-    min-height:50px;
+/* Image */
+
+.product-image {
+
+    width: 220px;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    margin-top: 20px;
+
 }
 
-.product-card h3{
-    margin:20px 0;
+/* Title */
+
+.product-card h2 {
+
+    margin-top: 20px;
+
+    color: #2E7D32;
+
 }
 
-.product-card button{
-    width:100%;
-    padding:14px;
-    background:#2E7D32;
-    color:white;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
+/* Rating */
+
+.rating {
+
+    color: #FFC107;
+
+    margin: 12px 0;
+
+    font-size: 17px;
+
 }
 
-.product-card button:hover{
-    background:#1B5E20;
+.rating span {
+
+    color: #777;
+
+}
+
+/* Description */
+
+.product-card p {
+
+    color: #555;
+
+    line-height: 26px;
+
+    min-height: 70px;
+
+}
+
+/* Price */
+
+.product-card h3 {
+
+    margin: 20px 0;
+
+    font-size: 26px;
+
+    color: #1B5E20;
+
+}
+
+/* Button */
+
+.product-card button {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #2E7D32;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+.product-card button:hover {
+
+    background: #1B5E20;
+
+    transform: scale(1.03);
+
 }

@@ -1,0 +1,101 @@
+.success-page{
+
+    min-height:80vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#F7FAF7;
+
+    padding:40px;
+
+}
+
+.success-card{
+
+    width:600px;
+
+    background:white;
+
+    padding:50px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.success-icon{
+
+    font-size:80px;
+
+    margin-bottom:20px;
+
+}
+
+.success-card h1{
+
+    color:#1B5E20;
+
+    margin-bottom:20px;
+
+}
+
+.success-card p{
+
+    color:#555;
+
+    font-size:18px;
+
+    line-height:30px;
+
+}
+
+.order-number{
+
+    margin:35px 0;
+
+    padding:20px;
+
+    background:#E8F5E9;
+
+    border-radius:12px;
+
+    color:#1B5E20;
+
+    font-size:22px;
+
+}
+
+.continue-shopping-btn{
+
+    background:#2E7D32;
+
+    color:white;
+
+    border:none;
+
+    padding:15px 40px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.continue-shopping-btn:hover{
+
+    background:#1B5E20;
+
+}

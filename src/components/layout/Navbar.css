@@ -1,70 +1,149 @@
+/* ==========================
+   PREMIUM NAVBAR
+========================== */
+
 .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 60px;
-    background: #2E7D32;
+
+    padding: 18px 60px;
+
+    background: #ffffff;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+    transition: all 0.3s ease;
 }
+
+/* ==========================
+   LOGO
+========================== */
 
 .logo {
     font-size: 28px;
-    font-weight: bold;
-    color: white;
+    font-weight: 700;
+    color: #2E7D32;
+    cursor: pointer;
+    transition: 0.3s;
 }
+
+.logo:hover {
+    transform: scale(1.03);
+}
+
+/* ==========================
+   NAV LINKS
+========================== */
 
 .nav-links {
     display: flex;
+    gap: 35px;
+
     list-style: none;
-    gap: 40px;
+
     margin: 0;
     padding: 0;
 }
 
-.nav-links li {
-    list-style: none;
-}
-
 .nav-links a {
     text-decoration: none;
-    color: white;
-    font-size: 18px;
+
+    color: #333;
+
+    font-size: 17px;
     font-weight: 600;
-    transition: color 0.3s;
+
+    transition: 0.3s;
 }
 
 .nav-links a:hover {
-    color: #FFC107;
+    color: #2E7D32;
 }
+
+/* ==========================
+   BUTTONS
+========================== */
 
 .nav-buttons {
     display: flex;
-    gap: 20px;
+    align-items: center;
+    gap: 15px;
 }
 
+/* Login */
+
 .login-btn {
-    background: white;
-    color: #2E7D32;
-    padding: 12px 28px;
-    border-radius: 8px;
     text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
+
+    color: #2E7D32;
+
+    border: 2px solid #2E7D32;
+
+    padding: 10px 24px;
+
+    border-radius: 30px;
+
+    font-weight: 600;
+
+    transition: all .3s ease;
 }
 
 .login-btn:hover {
-    background: #f2f2f2;
+    background: #2E7D32;
+    color: white;
 }
 
+/* Cart */
+
 .cart-btn {
-    background: #FFC107;
-    color: black;
-    padding: 12px 28px;
-    border-radius: 8px;
     text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
+
+    background: #2E7D32;
+
+    color: white;
+
+    padding: 10px 24px;
+
+    border-radius: 30px;
+
+    font-weight: 600;
+
+    transition: all .3s ease;
+
+    box-shadow: 0 4px 10px rgba(46,125,50,.25);
 }
 
 .cart-btn:hover {
-    background: #ffb300;
+    background: #1b5e20;
+    transform: translateY(-2px);
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .nav-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+
 }
