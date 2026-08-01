@@ -1,5 +1,79 @@
 const db = require("../config/db");
 
+// ======================================
+// Get All Orders
+// ======================================
+const getAllOrders = (req, res) => {
+  const sql = `
+    SELECT *
+    FROM orders
+    ORDER BY created_at DESC
+  `;
+
+  db.query(sql, (err, results) => {
+    if (err) {
+      return res.status(500).json({
+        success: false,
+        error: err.message,
+      });
+    }
+
+    res.json({
+      success: true,
+      orders: results,
+    });
+  });
+};
+
+// ======================================
+// Update Order Status
+// ======================================
+const updateOrderStatus = (req, res) => {
+  console.log("========== UPDATE ORDER STATUS ==========");
+  console.log("Params:", req.params);
+  console.log("Body:", req.body);
+
+  const { id } = req.params;
+  const { status } = req.body || {};
+
+  if (!status) {
+    return res.status(400).json({
+      success: false,
+      message: "Status is required.",
+    });
+  }
+
+  const sql = `
+    UPDATE orders
+    SET status = ?
+    WHERE id = ?
+  `;
+
+  db.query(sql, [status, id], (err, result) => {
+    if (err) {
+      return res.status(500).json({
+        success: false,
+        error: err.message,
+      });
+    }
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({
+        success: false,
+        message: "Order not found.",
+      });
+    }
+
+    res.json({
+      success: true,
+      message: "Order status updated successfully.",
+    });
+  });
+};
+
+// ======================================
+// Create Order
+// ======================================
 const createOrder = (req, res) => {
   const {
     customer_name,
@@ -79,5 +153,7 @@ const createOrder = (req, res) => {
 };
 
 module.exports = {
+  getAllOrders,
+  updateOrderStatus,
   createOrder,
 };

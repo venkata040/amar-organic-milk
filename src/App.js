@@ -14,6 +14,7 @@ import Register from "./pages/Register";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import OrderSuccess from "./pages/OrderSuccess";
+import AdminOrders from "./pages/AdminOrders";
 
 function App() {
   // Shopping Cart State
@@ -94,6 +95,12 @@ function App() {
         <Route
           path="/order-success"
           element={<OrderSuccess />}
+        />
+
+        {/* Admin Orders */}
+        <Route
+          path="/admin/orders"
+          element={<AdminOrders />}
         />
       </Routes>
 
