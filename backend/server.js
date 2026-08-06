@@ -6,6 +6,8 @@ const db = require("./config/db");
 
 const productRoutes = require("./routes/productRoutes");
 const orderRoutes = require("./routes/orderRoutes");
+const dashboardRoutes = require("./routes/dashboardRoutes");
+const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
@@ -81,6 +83,16 @@ app.use("/api/products", productRoutes);
 // Order Routes
 // ======================================
 app.use("/api/orders", orderRoutes);
+
+// ======================================
+// Dashboard Routes
+// ======================================
+app.use("/api/dashboard", dashboardRoutes);
+
+// ======================================
+// Authentication Routes
+// ======================================
+app.use("/api/auth", authRoutes);
 
 // ======================================
 // 404 Handler

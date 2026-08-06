@@ -3,21 +3,21 @@ import { Link, useLocation } from "react-router-dom";
 function AdminSidebar() {
   const location = useLocation();
 
-  const menuItems = [
+  const menu = [
     {
       name: "Dashboard",
       path: "/admin/dashboard",
       icon: "📊",
     },
     {
-      name: "Orders",
-      path: "/admin/orders",
-      icon: "📦",
-    },
-    {
       name: "Products",
       path: "/admin/products",
       icon: "🥛",
+    },
+    {
+      name: "Orders",
+      path: "/admin/orders",
+      icon: "📦",
     },
     {
       name: "Customers",
@@ -40,35 +40,29 @@ function AdminSidebar() {
     <div
       style={{
         width: "250px",
-        minHeight: "100vh",
         background: "#212529",
         color: "#fff",
         padding: "20px",
       }}
     >
-      <h3
-        style={{
-          textAlign: "center",
-          marginBottom: "30px",
-        }}
-      >
+      <h3 className="mb-4">
         Amar Organic Milk
       </h3>
 
-      {menuItems.map((item) => (
+      {menu.map((item) => (
         <Link
           key={item.path}
           to={item.path}
           style={{
             display: "block",
+            padding: "12px",
+            marginBottom: "10px",
+            borderRadius: "8px",
             textDecoration: "none",
             color:
               location.pathname === item.path
                 ? "#ffc107"
                 : "#fff",
-            padding: "12px",
-            borderRadius: "8px",
-            marginBottom: "10px",
             background:
               location.pathname === item.path
                 ? "#343a40"

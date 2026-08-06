@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import AdminLayout from "../components/admin/AdminLayout";
+
 import {
   getAllOrders,
   updateOrderStatus,
@@ -66,153 +68,157 @@ function AdminOrders() {
 
   if (loading) {
     return (
-      <div className="container mt-5">
-        <h2>Loading Orders...</h2>
-      </div>
+      <AdminLayout>
+        <div className="container mt-5">
+          <h2>Loading Orders...</h2>
+        </div>
+      </AdminLayout>
     );
   }
 
   return (
-    <div className="container-fluid mt-4">
+    <AdminLayout>
+      <div className="container-fluid mt-4">
 
-      <h2 className="text-center mb-4">
-        Amar Organic Milk Admin Dashboard
-      </h2>
+        <h2 className="text-center mb-4">
+          Amar Organic Milk Order Management
+        </h2>
 
-      <DashboardCards orders={orders} />
+        <DashboardCards orders={orders} />
 
-      <div className="row mb-4">
+        <div className="row mb-4">
 
-        <div className="col-md-6">
+          <div className="col-md-6">
 
-          <input
-            className="form-control"
-            placeholder="Search Customer..."
-            value={search}
-            onChange={(e) =>
-              setSearch(e.target.value)
-            }
-          />
+            <input
+              className="form-control"
+              placeholder="Search Customer..."
+              value={search}
+              onChange={(e) =>
+                setSearch(e.target.value)
+              }
+            />
+
+          </div>
+
+        </div>
+
+        <div className="table-responsive">
+
+          <table className="table table-bordered table-hover">
+
+            <thead className="table-dark">
+
+              <tr>
+
+                <th>ID</th>
+
+                <th>Customer</th>
+
+                <th>Phone</th>
+
+                <th>Email</th>
+
+                <th>City</th>
+
+                <th>Payment</th>
+
+                <th>Total</th>
+
+                <th>Status</th>
+
+                <th>Date</th>
+
+                <th>Action</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              {filteredOrders.map((order, index) => (
+
+                <tr key={order.id}>
+
+                  <td>{order.id}</td>
+
+                  <td>{order.customer_name}</td>
+
+                  <td>{order.phone}</td>
+
+                  <td>{order.email}</td>
+
+                  <td>{order.city}</td>
+
+                  <td>{order.payment_method}</td>
+
+                  <td>${Number(order.total).toFixed(2)}</td>
+
+                  <td>
+
+                    <select
+                      className="form-select"
+                      value={order.status}
+                      onChange={(e) =>
+                        handleStatusChange(
+                          index,
+                          e.target.value
+                        )
+                      }
+                    >
+
+                      <option value="Pending">
+                        Pending
+                      </option>
+
+                      <option value="Processing">
+                        Processing
+                      </option>
+
+                      <option value="Delivered">
+                        Delivered
+                      </option>
+
+                      <option value="Cancelled">
+                        Cancelled
+                      </option>
+
+                    </select>
+
+                  </td>
+
+                  <td>
+                    {new Date(
+                      order.created_at
+                    ).toLocaleString()}
+                  </td>
+
+                  <td>
+
+                    <button
+                      className="btn btn-success"
+                      onClick={() =>
+                        handleUpdate(order)
+                      }
+                    >
+                      Save
+                    </button>
+
+                  </td>
+
+                </tr>
+
+              ))}
+
+            </tbody>
+
+          </table>
 
         </div>
 
       </div>
-
-      <div className="table-responsive">
-
-        <table className="table table-bordered table-hover">
-
-          <thead>
-
-            <tr>
-
-              <th>ID</th>
-
-              <th>Customer</th>
-
-              <th>Phone</th>
-
-              <th>Email</th>
-
-              <th>City</th>
-
-              <th>Payment</th>
-
-              <th>Total</th>
-
-              <th>Status</th>
-
-              <th>Date</th>
-
-              <th>Action</th>
-
-            </tr>
-
-          </thead>
-
-          <tbody>
-
-            {filteredOrders.map((order, index) => (
-
-              <tr key={order.id}>
-
-                <td>{order.id}</td>
-
-                <td>{order.customer_name}</td>
-
-                <td>{order.phone}</td>
-
-                <td>{order.email}</td>
-
-                <td>{order.city}</td>
-
-                <td>{order.payment_method}</td>
-
-                <td>${Number(order.total).toFixed(2)}</td>
-
-                <td>
-
-                  <select
-                    className="form-select"
-                    value={order.status}
-                    onChange={(e) =>
-                      handleStatusChange(
-                        index,
-                        e.target.value
-                      )
-                    }
-                  >
-
-                    <option value="Pending">
-                      Pending
-                    </option>
-
-                    <option value="Processing">
-                      Processing
-                    </option>
-
-                    <option value="Delivered">
-                      Delivered
-                    </option>
-
-                    <option value="Cancelled">
-                      Cancelled
-                    </option>
-
-                  </select>
-
-                </td>
-
-                <td>
-                  {new Date(
-                    order.created_at
-                  ).toLocaleString()}
-                </td>
-
-                <td>
-
-                  <button
-                    className="btn btn-success"
-                    onClick={() =>
-                      handleUpdate(order)
-                    }
-                  >
-                    Save
-                  </button>
-
-                </td>
-
-              </tr>
-
-            ))}
-
-          </tbody>
-
-        </table>
-
-      </div>
-
-    </div>
+    </AdminLayout>
   );
 }
 

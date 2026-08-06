@@ -14,10 +14,12 @@ import Register from "./pages/Register";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import OrderSuccess from "./pages/OrderSuccess";
+
+import AdminDashboard from "./pages/AdminDashboard";
 import AdminOrders from "./pages/AdminOrders";
+import AdminProducts from "./pages/AdminProducts";
 
 function App() {
-  // Shopping Cart State
   const [cart, setCart] = useState([]);
 
   return (
@@ -97,10 +99,22 @@ function App() {
           element={<OrderSuccess />}
         />
 
+        {/* Admin Dashboard */}
+        <Route
+          path="/admin/dashboard"
+          element={<AdminDashboard />}
+        />
+
         {/* Admin Orders */}
         <Route
           path="/admin/orders"
           element={<AdminOrders />}
+        />
+
+        {/* Admin Products */}
+        <Route
+          path="/admin/products"
+          element={<AdminProducts />}
         />
       </Routes>
 
