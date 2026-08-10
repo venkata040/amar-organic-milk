@@ -9,6 +9,8 @@ const orderRoutes = require("./routes/orderRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes");
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
+const paymentRoutes = require("./routes/paymentRoutes");
+const settingsRoutes = require("./routes/settingsRoutes");
 
 // JWT Middleware
 const authenticateToken = require("./middleware/authMiddleware");
@@ -106,9 +108,18 @@ app.use("/api/auth", authRoutes);
 // ======================================
 // User / Customer Routes
 // ======================================
-// Customer management is protected inside
-// userRoutes.js using JWT + Admin middleware.
 app.use("/api/users", userRoutes);
+
+// ======================================
+// Payment Routes
+// ======================================
+app.use("/api/payments", paymentRoutes);
+
+// ======================================
+// Settings Routes
+// ======================================
+// Admin only
+app.use("/api/settings", settingsRoutes);
 
 // ======================================
 // Protected Authentication Test Route

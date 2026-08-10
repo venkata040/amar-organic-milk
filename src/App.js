@@ -20,20 +20,20 @@ import OrderSuccess from "./pages/OrderSuccess";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminOrders from "./pages/AdminOrders";
 import AdminProducts from "./pages/AdminProducts";
+import AdminCustomers from "./pages/AdminCustomers";
+import AdminPayments from "./pages/AdminPayments";
+import AdminSettings from "./pages/AdminSettings";
 
 function App() {
   const [cart, setCart] = useState([]);
 
   return (
     <>
-      {/* Navbar */}
-      <Navbar cart={cart} />
-
       <Routes>
 
-        {/* ============================== */}
+        {/* ====================================== */}
         {/* Customer Routes */}
-        {/* ============================== */}
+        {/* ====================================== */}
 
         {/* Home */}
         <Route
@@ -110,9 +110,9 @@ function App() {
           element={<OrderSuccess />}
         />
 
-        {/* ============================== */}
+        {/* ====================================== */}
         {/* Protected Admin Routes */}
-        {/* ============================== */}
+        {/* ====================================== */}
 
         {/* Admin Dashboard */}
         <Route
@@ -120,6 +120,16 @@ function App() {
           element={
             <ProtectedAdminRoute>
               <AdminDashboard />
+            </ProtectedAdminRoute>
+          }
+        />
+
+        {/* Admin Products */}
+        <Route
+          path="/admin/products"
+          element={
+            <ProtectedAdminRoute>
+              <AdminProducts />
             </ProtectedAdminRoute>
           }
         />
@@ -134,12 +144,32 @@ function App() {
           }
         />
 
-        {/* Admin Products */}
+        {/* Admin Customers */}
         <Route
-          path="/admin/products"
+          path="/admin/customers"
           element={
             <ProtectedAdminRoute>
-              <AdminProducts />
+              <AdminCustomers />
+            </ProtectedAdminRoute>
+          }
+        />
+
+        {/* Admin Payments */}
+        <Route
+          path="/admin/payments"
+          element={
+            <ProtectedAdminRoute>
+              <AdminPayments />
+            </ProtectedAdminRoute>
+          }
+        />
+
+        {/* Admin Settings */}
+        <Route
+          path="/admin/settings"
+          element={
+            <ProtectedAdminRoute>
+              <AdminSettings />
             </ProtectedAdminRoute>
           }
         />
