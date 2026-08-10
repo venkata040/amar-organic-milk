@@ -7,19 +7,42 @@ const {
   updateOrderStatus,
 } = require("../controllers/orderController");
 
-// ===============================
+// JWT authentication middleware
+const authenticateToken = require("../middleware/authMiddleware");
+
+// Admin authorization middleware
+const requireAdmin = require("../middleware/adminMiddleware");
+
+// ======================================
 // Get All Orders
-// ===============================
-router.get("/", getAllOrders);
+// ======================================
+// Admin only
+router.get(
+  "/",
+  authenticateToken,
+  requireAdmin,
+  getAllOrders
+);
 
-// ===============================
+// ======================================
 // Create New Order
-// ===============================
-router.post("/", createOrder);
+// ======================================
+// Logged-in users can create orders
+router.post(
+  "/",
+  authenticateToken,
+  createOrder
+);
 
-// ===============================
+// ======================================
 // Update Order Status
-// ===============================
-router.put("/:id/status", updateOrderStatus);
+// ======================================
+// Admin only
+router.put(
+  "/:id/status",
+  authenticateToken,
+  requireAdmin,
+  updateOrderStatus
+);
 
 module.exports = router;

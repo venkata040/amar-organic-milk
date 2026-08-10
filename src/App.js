@@ -4,6 +4,8 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 
+import ProtectedAdminRoute from "./components/admin/ProtectedAdminRoute";
+
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import Subscription from "./pages/Subscription";
@@ -24,11 +26,20 @@ function App() {
 
   return (
     <>
+      {/* Navbar */}
       <Navbar cart={cart} />
 
       <Routes>
+
+        {/* ============================== */}
+        {/* Customer Routes */}
+        {/* ============================== */}
+
         {/* Home */}
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={<Home />}
+        />
 
         {/* Products */}
         <Route
@@ -99,25 +110,43 @@ function App() {
           element={<OrderSuccess />}
         />
 
+        {/* ============================== */}
+        {/* Protected Admin Routes */}
+        {/* ============================== */}
+
         {/* Admin Dashboard */}
         <Route
           path="/admin/dashboard"
-          element={<AdminDashboard />}
+          element={
+            <ProtectedAdminRoute>
+              <AdminDashboard />
+            </ProtectedAdminRoute>
+          }
         />
 
         {/* Admin Orders */}
         <Route
           path="/admin/orders"
-          element={<AdminOrders />}
+          element={
+            <ProtectedAdminRoute>
+              <AdminOrders />
+            </ProtectedAdminRoute>
+          }
         />
 
         {/* Admin Products */}
         <Route
           path="/admin/products"
-          element={<AdminProducts />}
+          element={
+            <ProtectedAdminRoute>
+              <AdminProducts />
+            </ProtectedAdminRoute>
+          }
         />
+
       </Routes>
 
+      {/* Footer */}
       <Footer />
     </>
   );

@@ -8,6 +8,11 @@ const productRoutes = require("./routes/productRoutes");
 const orderRoutes = require("./routes/orderRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes");
 const authRoutes = require("./routes/authRoutes");
+const userRoutes = require("./routes/userRoutes");
+
+// JWT Middleware
+const authenticateToken = require("./middleware/authMiddleware");
+const requireAdmin = require("./middleware/adminMiddleware");
 
 const app = express();
 
@@ -30,6 +35,7 @@ app.use((req, res, next) => {
   console.log("Content-Type:", req.headers["content-type"]);
   console.log("Body:", req.body);
   console.log("====================================");
+
   next();
 });
 
@@ -44,19 +50,22 @@ app.get("/", (req, res) => {
 // Test Database Connection
 // ======================================
 app.get("/test-db", (req, res) => {
-  db.query("SELECT NOW() AS currentTime", (err, result) => {
-    if (err) {
-      return res.status(500).json({
-        success: false,
-        error: err.message,
+  db.query(
+    "SELECT NOW() AS currentTime",
+    (err, result) => {
+      if (err) {
+        return res.status(500).json({
+          success: false,
+          error: err.message,
+        });
+      }
+
+      res.json({
+        success: true,
+        databaseTime: result[0].currentTime,
       });
     }
-
-    res.json({
-      success: true,
-      databaseTime: result[0].currentTime,
-    });
-  });
+  );
 });
 
 // ======================================
@@ -93,6 +102,46 @@ app.use("/api/dashboard", dashboardRoutes);
 // Authentication Routes
 // ======================================
 app.use("/api/auth", authRoutes);
+
+// ======================================
+// User / Customer Routes
+// ======================================
+// Customer management is protected inside
+// userRoutes.js using JWT + Admin middleware.
+app.use("/api/users", userRoutes);
+
+// ======================================
+// Protected Authentication Test Route
+// ======================================
+// Any logged-in user can access this route.
+app.get(
+  "/api/auth/protected",
+  authenticateToken,
+  (req, res) => {
+    res.json({
+      success: true,
+      message: "You are authenticated.",
+      user: req.user,
+    });
+  }
+);
+
+// ======================================
+// Admin Only Test Route
+// ======================================
+// Only users with role = admin can access.
+app.get(
+  "/api/auth/admin-test",
+  authenticateToken,
+  requireAdmin,
+  (req, res) => {
+    res.json({
+      success: true,
+      message: "You are an admin.",
+      user: req.user,
+    });
+  }
+);
 
 // ======================================
 // 404 Handler

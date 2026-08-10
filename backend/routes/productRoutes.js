@@ -8,9 +8,50 @@ const {
   deleteProduct,
 } = require("../controllers/productController");
 
+// JWT authentication middleware
+const authenticateToken = require("../middleware/authMiddleware");
+
+// Admin authorization middleware
+const requireAdmin = require("../middleware/adminMiddleware");
+
+// ======================================
+// Get Products
+// ======================================
+// Public route
+// Customers can view products without logging in
 router.get("/", getProducts);
-router.post("/", addProduct);
-router.put("/:id", updateProduct);
-router.delete("/:id", deleteProduct);
+
+// ======================================
+// Add Product
+// ======================================
+// Admin only
+router.post(
+  "/",
+  authenticateToken,
+  requireAdmin,
+  addProduct
+);
+
+// ======================================
+// Update Product
+// ======================================
+// Admin only
+router.put(
+  "/:id",
+  authenticateToken,
+  requireAdmin,
+  updateProduct
+);
+
+// ======================================
+// Delete Product
+// ======================================
+// Admin only
+router.delete(
+  "/:id",
+  authenticateToken,
+  requireAdmin,
+  deleteProduct
+);
 
 module.exports = router;

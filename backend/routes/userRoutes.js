@@ -3,24 +3,21 @@ const express = require("express");
 const router = express.Router();
 
 const {
-  getDashboardStats,
-} = require("../controllers/dashboardController");
+  getAllCustomers,
+} = require("../controllers/userController");
 
-// JWT authentication middleware
 const authenticateToken = require("../middleware/authMiddleware");
-
-// Admin authorization middleware
 const requireAdmin = require("../middleware/adminMiddleware");
 
 // ======================================
-// Dashboard Statistics
+// Get All Customers
 // ======================================
 // Admin only
 router.get(
   "/",
   authenticateToken,
   requireAdmin,
-  getDashboardStats
+  getAllCustomers
 );
 
 module.exports = router;
