@@ -1,41 +1,240 @@
-.why-section{
-    padding:80px;
-    background:#F8F9FA;
-    text-align:center;
+/* =========================================
+   WHY CHOOSE US SECTION
+========================================= */
+
+.why-section {
+  padding: 80px 8%;
+
+  background: #f7fbf7;
+
+  text-align: center;
+
+  box-sizing: border-box;
 }
 
-.why-section h2{
-    font-size:42px;
-    color:#2E7D32;
-    margin-bottom:50px;
+/* =========================================
+   SECTION TITLE
+========================================= */
+
+.why-section h2 {
+  margin: 0 0 50px;
+
+  color: #2e7d32;
+
+  font-size: 42px;
+
+  font-weight: 800;
 }
 
-.why-container{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
+/* =========================================
+   CARDS CONTAINER
+========================================= */
+
+.why-container {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 25px;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
 }
 
-.why-card{
-    width:250px;
-    background:white;
-    padding:30px;
-    border-radius:12px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+/* =========================================
+   WHY CARD
+========================================= */
+
+.why-card {
+  padding: 35px 25px;
+
+  background: #ffffff;
+
+  border-radius: 16px;
+
+  border: 1px solid #e3eee4;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.06);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 
-.icon{
-    font-size:60px;
-    margin-bottom:20px;
+/* Card hover */
+
+.why-card:hover {
+  transform: translateY(-8px);
+
+  border-color: #b7dcb9;
+
+  box-shadow:
+    0 15px 30px rgba(46, 125, 50, 0.12);
 }
 
-.why-card h3{
-    color:#2E7D32;
-    margin-bottom:15px;
+/* =========================================
+   ICON
+========================================= */
+
+.why-card .icon {
+  width: 80px;
+
+  height: 80px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #eaf7ec;
+
+  font-size: 40px;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
 }
 
-.why-card p{
-    color:#555;
-    line-height:28px;
+.why-card:hover .icon {
+  transform: scale(1.1);
+
+  background: #dcefdc;
+}
+
+/* =========================================
+   CARD TITLE
+========================================= */
+
+.why-card h3 {
+  margin: 0 0 12px;
+
+  color: #2e7d32;
+
+  font-size: 21px;
+
+  font-weight: 700;
+}
+
+/* =========================================
+   CARD DESCRIPTION
+========================================= */
+
+.why-card p {
+  margin: 0;
+
+  color: #666;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+/* =========================================
+   LARGE TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+  .why-section {
+    padding: 70px 5%;
+  }
+
+  .why-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    max-width: 750px;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 750px) {
+  .why-section {
+    padding: 60px 25px;
+  }
+
+  .why-section h2 {
+    font-size: 36px;
+
+    margin-bottom: 40px;
+  }
+
+  .why-container {
+    gap: 20px;
+  }
+
+  .why-card {
+    padding: 30px 20px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 550px) {
+  .why-section {
+    padding: 50px 18px;
+  }
+
+  .why-section h2 {
+    font-size: 31px;
+
+    line-height: 1.2;
+
+    margin-bottom: 30px;
+  }
+
+  .why-container {
+    grid-template-columns: 1fr;
+
+    max-width: 380px;
+
+    gap: 18px;
+  }
+
+  .why-card {
+    padding: 30px 22px;
+  }
+
+  .why-card .icon {
+    width: 70px;
+
+    height: 70px;
+
+    font-size: 35px;
+  }
+
+  .why-card h3 {
+    font-size: 20px;
+  }
+
+  .why-card p {
+    font-size: 15px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .why-section {
+    padding-left: 14px;
+
+    padding-right: 14px;
+  }
+
+  .why-section h2 {
+    font-size: 27px;
+  }
 }

@@ -6,15 +6,24 @@ import Testimonials from "../components/home/Testimonials";
 import AboutSection from "../components/home/AboutSection";
 import ContactSection from "../components/home/ContactSection";
 
-function Home() {
+function Home({ cart, setCart }) {
   return (
     <>
       <Hero />
-      <FeaturedProducts />
+
+      <FeaturedProducts
+        cart={cart}
+        setCart={setCart}
+      />
+
       <WhyChooseUs />
+
       <SubscriptionPlans />
+
       <Testimonials />
+
       <AboutSection />
+
       <ContactSection />
     </>
   );

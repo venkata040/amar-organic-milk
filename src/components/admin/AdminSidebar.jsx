@@ -30,6 +30,11 @@ function AdminSidebar() {
       icon: "💳",
     },
     {
+      name: "Messages",
+      path: "/admin/messages",
+      icon: "📩",
+    },
+    {
       name: "Settings",
       path: "/admin/settings",
       icon: "⚙️",
@@ -43,11 +48,18 @@ function AdminSidebar() {
         background: "#212529",
         color: "#fff",
         padding: "20px",
+        minHeight: "100vh",
+        boxSizing: "border-box",
       }}
     >
-      <h3 className="mb-4">
+      <h2
+        style={{
+          marginBottom: "30px",
+          lineHeight: "1.3",
+        }}
+      >
         Amar Organic Milk
-      </h3>
+      </h2>
 
       {menu.map((item) => (
         <Link
@@ -59,10 +71,12 @@ function AdminSidebar() {
             marginBottom: "10px",
             borderRadius: "8px",
             textDecoration: "none",
+
             color:
               location.pathname === item.path
                 ? "#ffc107"
                 : "#fff",
+
             background:
               location.pathname === item.path
                 ? "#343a40"

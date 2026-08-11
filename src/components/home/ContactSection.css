@@ -1,75 +1,337 @@
+/* =========================================
+   CONTACT SECTION
+========================================= */
+
 .contact-section {
-    padding: 80px;
-    background: #F8F9FA;
+  padding: 90px 8%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f4fbf4 0%,
+      #ffffff 100%
+    );
+
+  text-align: center;
+
+  box-sizing: border-box;
 }
 
-.contact-section h2 {
-    text-align: center;
-    font-size: 42px;
-    color: #2E7D32;
-    margin-bottom: 60px;
+/* =========================================
+   SECTION TITLE
+========================================= */
+
+.contact-section > h2 {
+  margin: 0 0 55px;
+
+  color: #2e7d32;
+
+  font-size: 42px;
+
+  font-weight: 800;
 }
+
+/* =========================================
+   CONTACT CONTAINER
+========================================= */
 
 .contact-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 60px;
-    flex-wrap: wrap;
+  display: grid;
+
+  grid-template-columns:
+    minmax(300px, 0.8fr)
+    minmax(400px, 1.2fr);
+
+  gap: 40px;
+
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  text-align: left;
 }
 
+/* =========================================
+   CONTACT INFORMATION
+========================================= */
+
 .contact-info {
-    flex: 1;
-    min-width: 320px;
+  padding: 40px;
+
+  background: #2e7d32;
+
+  color: #ffffff;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 10px 30px rgba(46, 125, 50, 0.18);
+
+  box-sizing: border-box;
 }
 
 .contact-info h3 {
-    color: #2E7D32;
-    font-size: 30px;
-    margin-bottom: 20px;
+  margin: 0 0 18px;
+
+  font-size: 28px;
 }
 
-.contact-info p {
-    color: #555;
-    line-height: 30px;
+.contact-info > p {
+  margin: 0 0 30px;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  opacity: 0.95;
 }
+
+/* =========================================
+   CONTACT INFO ITEM
+========================================= */
 
 .info-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-top: 25px;
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 14px;
+
+  margin-bottom: 20px;
 }
 
 .info-item span {
-    font-size: 26px;
+  font-size: 23px;
+
+  flex-shrink: 0;
 }
 
-.contact-form {
-    flex: 1;
-    min-width: 320px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.info-item p {
+  margin: 2px 0 0;
+
+  font-size: 15px;
+
+  line-height: 1.5;
 }
+
+/* =========================================
+   CONTACT PAGE BUTTON
+========================================= */
+
+.contact-page-btn {
+  margin-top: 15px;
+
+  padding: 11px 20px;
+
+  border: 2px solid #ffffff;
+
+  border-radius: 25px;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.contact-page-btn:hover {
+  background: #ffffff;
+
+  color: #2e7d32;
+}
+
+/* =========================================
+   CONTACT FORM
+========================================= */
+
+.contact-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+
+  padding: 40px;
+
+  background: #ffffff;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08);
+
+  box-sizing: border-box;
+}
+
+/* =========================================
+   INPUTS
+========================================= */
 
 .contact-form input,
 .contact-form textarea {
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
+  width: 100%;
+
+  padding: 14px 16px;
+
+  border: 1px solid #d5ddd6;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #333;
+
+  font-family: inherit;
+
+  font-size: 15px;
+
+  box-sizing: border-box;
+
+  outline: none;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #2e7d32;
+
+  box-shadow:
+    0 0 0 3px rgba(46, 125, 50, 0.1);
+}
+
+.contact-form textarea {
+  resize: vertical;
+
+  min-height: 130px;
+}
+
+/* =========================================
+   SEND BUTTON
+========================================= */
 
 .contact-form button {
-    padding: 15px;
-    background: #2E7D32;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 18px;
-    cursor: pointer;
+  width: 100%;
+
+  padding: 14px 20px;
+
+  border: none;
+
+  border-radius: 25px;
+
+  background: #2e7d32;
+
+  color: #ffffff;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.contact-form button:hover {
-    background: #1B5E20;
+.contact-form button:hover:not(:disabled) {
+  background: #1b5e20;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 15px rgba(46, 125, 50, 0.25);
+}
+
+.contact-form button:disabled {
+  background: #999;
+
+  cursor: not-allowed;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 850px) {
+  .contact-section {
+    padding: 65px 25px;
+  }
+
+  .contact-section > h2 {
+    font-size: 36px;
+
+    margin-bottom: 40px;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+
+    max-width: 650px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 550px) {
+  .contact-section {
+    padding: 55px 18px;
+  }
+
+  .contact-section > h2 {
+    font-size: 31px;
+
+    margin-bottom: 30px;
+  }
+
+  .contact-container {
+    gap: 20px;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 28px 22px;
+  }
+
+  .contact-info h3 {
+    font-size: 24px;
+  }
+
+  .contact-info > p {
+    font-size: 15px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .contact-section {
+    padding-left: 14px;
+
+    padding-right: 14px;
+  }
+
+  .contact-section > h2 {
+    font-size: 27px;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 25px 18px;
+  }
 }

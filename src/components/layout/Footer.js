@@ -1,71 +1,195 @@
+import { Link } from "react-router-dom";
 import "./Footer.css";
 
 function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="footer">
 
       <div className="footer-container">
 
-        {/* Company */}
+        {/* ======================================
+            Company
+        ====================================== */}
 
-        <div className="footer-column">
+        <div className="footer-column footer-company">
 
-          <h2>Amar Organic Milk</h2>
+          <Link to="/" className="footer-logo">
+            🥛 Amar Organic Milk
+          </Link>
 
           <p>
-            Fresh, pure and trusted organic milk delivered directly
-            to your doorstep every day.
+            Fresh, pure and trusted organic milk
+            delivered directly to your doorstep
+            every day.
           </p>
+
+          <div className="footer-organic">
+            🌿 100% Fresh &nbsp; • &nbsp; 🐄 Farm Fresh
+          </div>
 
         </div>
 
-        {/* Quick Links */}
+        {/* ======================================
+            Quick Links
+        ====================================== */}
 
         <div className="footer-column">
 
           <h3>Quick Links</h3>
 
           <ul>
-            <li>Home</li>
-            <li>Products</li>
-            <li>Subscription</li>
-            <li>About</li>
-            <li>Contact</li>
+
+            <li>
+              <Link to="/">
+                Home
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/products">
+                Products
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/subscription">
+                Subscription
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/about">
+                About Us
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/contact">
+                Contact Us
+              </Link>
+            </li>
+
           </ul>
 
         </div>
 
-        {/* Contact */}
+        {/* ======================================
+            Customer
+        ====================================== */}
 
         <div className="footer-column">
 
-          <h3>Contact</h3>
+          <h3>Customer</h3>
 
-          <p>📍 Melbourne, Victoria</p>
-          <p>📞 +61 XXX XXX XXX</p>
-          <p>📧 info@amarorganicmilk.com</p>
+          <ul>
+
+            <li>
+              <Link to="/login">
+                Login
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/register">
+                Create Account
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/cart">
+                Shopping Cart
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/checkout">
+                Checkout
+              </Link>
+            </li>
+
+          </ul>
 
         </div>
 
-        {/* Follow Us */}
+        {/* ======================================
+            Contact
+        ====================================== */}
 
         <div className="footer-column">
 
-          <h3>Follow Us</h3>
+          <h3>Contact Us</h3>
 
-          <p>Facebook</p>
-          <p>Instagram</p>
-          <p>LinkedIn</p>
+          <p>
+            📍 Melbourne, Victoria, Australia
+          </p>
+
+          <p>
+            📞 +61 XXX XXX XXX
+          </p>
+
+          <p>
+            📧 info@amarorganicmilk.com
+          </p>
+
+          {/* Social Links */}
+
+          <div className="footer-social">
+
+            <span>Follow Us</span>
+
+            <div className="social-links">
+
+              <a
+                href="#"
+                aria-label="Facebook"
+              >
+                Facebook
+              </a>
+
+              <a
+                href="#"
+                aria-label="Instagram"
+              >
+                Instagram
+              </a>
+
+              <a
+                href="#"
+                aria-label="LinkedIn"
+              >
+                LinkedIn
+              </a>
+
+            </div>
+
+          </div>
 
         </div>
 
       </div>
 
-      <hr />
+      {/* ======================================
+          Bottom Footer
+      ====================================== */}
 
-      <div className="copyright">
+      <div className="footer-bottom">
 
-        © 2026 Amar Organic Milk. All Rights Reserved.
+        <div className="footer-divider"></div>
+
+        <div className="copyright">
+
+          <p>
+            © {currentYear} Amar Organic Milk.
+            All Rights Reserved.
+          </p>
+
+          <p className="portfolio-note">
+            Freshness • Quality • Trust
+          </p>
+
+        </div>
 
       </div>
 

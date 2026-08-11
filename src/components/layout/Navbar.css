@@ -1,149 +1,334 @@
-/* ==========================
+/* =========================================
    PREMIUM NAVBAR
-========================== */
+========================================= */
 
 .navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    padding: 18px 60px;
+  padding: 18px 60px;
 
-    background: #ffffff;
+  background: #ffffff;
 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 
-    transition: all 0.3s ease;
+  transition: all 0.3s ease;
+
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* ==========================
+/* =========================================
    LOGO
-========================== */
+========================================= */
 
 .logo {
-    font-size: 28px;
-    font-weight: 700;
-    color: #2E7D32;
-    cursor: pointer;
-    transition: 0.3s;
+  font-size: 28px;
+  font-weight: 700;
+  color: #2e7d32;
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  white-space: nowrap;
 }
 
 .logo:hover {
-    transform: scale(1.03);
+  transform: scale(1.03);
 }
 
-/* ==========================
-   NAV LINKS
-========================== */
+/* =========================================
+   NAVIGATION LINKS
+========================================= */
 
 .nav-links {
-    display: flex;
-    gap: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    list-style: none;
+  gap: 35px;
 
-    margin: 0;
-    padding: 0;
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
-    text-decoration: none;
+  position: relative;
 
-    color: #333;
+  text-decoration: none;
 
-    font-size: 17px;
-    font-weight: 600;
+  color: #333;
 
-    transition: 0.3s;
+  font-size: 17px;
+  font-weight: 600;
+
+  transition: color 0.3s ease;
 }
+
+/* Navigation hover */
 
 .nav-links a:hover {
-    color: #2E7D32;
+  color: #2e7d32;
 }
 
-/* ==========================
-   BUTTONS
-========================== */
+/* Animated underline */
+
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -6px;
+
+  width: 0;
+  height: 2px;
+
+  background: #2e7d32;
+
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* =========================================
+   NAVIGATION BUTTONS
+========================================= */
 
 .nav-buttons {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  white-space: nowrap;
 }
 
-/* Login */
+/* =========================================
+   LOGIN BUTTON
+========================================= */
 
 .login-btn {
-    text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-    color: #2E7D32;
+  text-decoration: none;
 
-    border: 2px solid #2E7D32;
+  color: #2e7d32;
 
-    padding: 10px 24px;
+  border: 2px solid #2e7d32;
 
-    border-radius: 30px;
+  padding: 10px 24px;
 
-    font-weight: 600;
+  border-radius: 30px;
 
-    transition: all .3s ease;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
 }
 
 .login-btn:hover {
-    background: #2E7D32;
-    color: white;
+  background: #2e7d32;
+  color: white;
+
+  transform: translateY(-2px);
 }
 
-/* Cart */
+/* =========================================
+   CART BUTTON
+========================================= */
 
 .cart-btn {
-    text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-    background: #2E7D32;
+  text-decoration: none;
 
-    color: white;
+  background: #2e7d32;
 
-    padding: 10px 24px;
+  color: white;
 
-    border-radius: 30px;
+  padding: 10px 24px;
 
-    font-weight: 600;
+  border-radius: 30px;
 
-    transition: all .3s ease;
+  font-weight: 600;
 
-    box-shadow: 0 4px 10px rgba(46,125,50,.25);
+  transition: all 0.3s ease;
+
+  box-shadow: 0 4px 10px rgba(46, 125, 50, 0.25);
 }
 
 .cart-btn:hover {
-    background: #1b5e20;
-    transform: translateY(-2px);
+  background: #1b5e20;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 15px rgba(46, 125, 50, 0.3);
 }
 
-/* ==========================
-   RESPONSIVE
-========================== */
+/* =========================================
+   LARGE TABLETS / SMALL LAPTOPS
+========================================= */
+
+@media (max-width: 1200px) {
+  .navbar {
+    padding: 16px 35px;
+  }
+
+  .nav-links {
+    gap: 22px;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+  }
+
+  .logo {
+    font-size: 25px;
+  }
+
+  .login-btn,
+  .cart-btn {
+    padding: 9px 18px;
+  }
+}
+
+/* =========================================
+   TABLETS
+========================================= */
 
 @media (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
 
-    .navbar {
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px;
-    }
+    gap: 18px;
 
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-    }
+    padding: 20px;
+  }
 
-    .nav-buttons {
-        width: 100%;
-        justify-content: center;
-    }
+  .logo {
+    font-size: 26px;
+  }
 
+  .nav-links {
+    width: 100%;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 14px 22px;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+  }
+
+  .nav-buttons {
+    width: 100%;
+
+    justify-content: center;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 15px 12px;
+
+    gap: 15px;
+  }
+
+  .logo {
+    font-size: 22px;
+
+    text-align: center;
+  }
+
+  .nav-links {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    width: 100%;
+
+    gap: 8px;
+
+    text-align: center;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+
+    padding: 8px 5px;
+
+    font-size: 15px;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .nav-buttons {
+    width: 100%;
+
+    display: flex;
+
+    gap: 10px;
+  }
+
+  .login-btn,
+  .cart-btn {
+    flex: 1;
+
+    padding: 10px 12px;
+
+    font-size: 14px;
+
+    text-align: center;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE PHONES
+========================================= */
+
+@media (max-width: 400px) {
+  .logo {
+    font-size: 20px;
+  }
+
+  .nav-links {
+    gap: 5px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .login-btn,
+  .cart-btn {
+    padding: 9px 8px;
+
+    font-size: 13px;
+  }
 }

@@ -1,40 +1,232 @@
-.testimonial-section{
-    padding:80px;
-    background:#F8F9FA;
-    text-align:center;
+/* =========================================
+   TESTIMONIAL SECTION
+========================================= */
+
+.testimonial-section {
+  padding: 90px 8%;
+
+  background: #f7fbf7;
+
+  text-align: center;
+
+  box-sizing: border-box;
 }
 
-.testimonial-section h2{
-    font-size:42px;
-    color:#2E7D32;
-    margin-bottom:50px;
+/* =========================================
+   SECTION TITLE
+========================================= */
+
+.testimonial-section h2 {
+  margin: 0 0 55px;
+
+  color: #2e7d32;
+
+  font-size: 42px;
+
+  font-weight: 800;
 }
 
-.testimonial-container{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
+/* =========================================
+   TESTIMONIAL CONTAINER
+========================================= */
+
+.testimonial-container {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 30px;
+
+  max-width: 1050px;
+
+  margin: 0 auto;
 }
 
-.testimonial-card{
-    width:320px;
-    background:white;
-    padding:30px;
-    border-radius:12px;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
+/* =========================================
+   TESTIMONIAL CARD
+========================================= */
+
+.testimonial-card {
+  padding: 35px 30px;
+
+  background: #ffffff;
+
+  border-radius: 18px;
+
+  border: 1px solid #e1e8e2;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.06);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+
+  box-sizing: border-box;
 }
 
-.testimonial-card h3{
-    font-size:28px;
+/* =========================================
+   CARD HOVER
+========================================= */
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+
+  border-color: #b7dcb9;
+
+  box-shadow:
+    0 15px 30px rgba(46, 125, 50, 0.12);
 }
 
-.testimonial-card p{
-    margin:25px 0;
-    color:#555;
-    line-height:30px;
+/* =========================================
+   STAR RATING
+========================================= */
+
+.testimonial-card h3 {
+  margin: 0 0 20px;
+
+  font-size: 22px;
+
+  letter-spacing: 2px;
 }
 
-.testimonial-card h4{
-    color:#2E7D32;
+/* =========================================
+   CUSTOMER REVIEW
+========================================= */
+
+.testimonial-card p {
+  margin: 0 auto 22px;
+
+  color: #555;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  font-style: italic;
+
+  max-width: 320px;
+}
+
+/* =========================================
+   CUSTOMER NAME
+========================================= */
+
+.testimonial-card h4 {
+  margin: 0;
+
+  color: #2e7d32;
+
+  font-size: 17px;
+
+  font-weight: 700;
+}
+
+/* =========================================
+   LARGE TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+  .testimonial-section {
+    padding: 75px 5%;
+  }
+
+  .testimonial-container {
+    gap: 20px;
+  }
+
+  .testimonial-card {
+    padding: 30px 22px;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+  .testimonial-section {
+    padding: 65px 25px;
+  }
+
+  .testimonial-section h2 {
+    font-size: 36px;
+
+    margin-bottom: 45px;
+  }
+
+  .testimonial-container {
+    grid-template-columns: 1fr;
+
+    max-width: 550px;
+
+    gap: 25px;
+  }
+
+  .testimonial-card {
+    padding: 35px 30px;
+  }
+
+  .testimonial-card p {
+    max-width: 450px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 550px) {
+  .testimonial-section {
+    padding: 55px 18px;
+  }
+
+  .testimonial-section h2 {
+    font-size: 31px;
+
+    line-height: 1.2;
+
+    margin-bottom: 35px;
+  }
+
+  .testimonial-container {
+    max-width: 380px;
+
+    gap: 20px;
+  }
+
+  .testimonial-card {
+    padding: 30px 22px;
+  }
+
+  .testimonial-card h3 {
+    font-size: 20px;
+  }
+
+  .testimonial-card p {
+    font-size: 15px;
+
+    line-height: 1.7;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .testimonial-section {
+    padding-left: 14px;
+
+    padding-right: 14px;
+  }
+
+  .testimonial-section h2 {
+    font-size: 27px;
+  }
+
+  .testimonial-card {
+    padding: 28px 18px;
+  }
 }

@@ -23,12 +23,19 @@ import AdminProducts from "./pages/AdminProducts";
 import AdminCustomers from "./pages/AdminCustomers";
 import AdminPayments from "./pages/AdminPayments";
 import AdminSettings from "./pages/AdminSettings";
+import AdminMessages from "./pages/AdminMessages";
 
 function App() {
   const [cart, setCart] = useState([]);
 
   return (
     <>
+      {/* ====================================== */}
+      {/* Main Website Navigation */}
+      {/* ====================================== */}
+
+      <Navbar cart={cart} />
+
       <Routes>
 
         {/* ====================================== */}
@@ -38,7 +45,12 @@ function App() {
         {/* Home */}
         <Route
           path="/"
-          element={<Home />}
+          element={
+            <Home
+              cart={cart}
+              setCart={setCart}
+            />
+          }
         />
 
         {/* Products */}
@@ -173,10 +185,21 @@ function App() {
             </ProtectedAdminRoute>
           }
         />
+        <Route
+          path="/admin/messages"
+          element={
+            <ProtectedAdminRoute>
+              <AdminMessages />
+            </ProtectedAdminRoute>
+      }
+   />
 
       </Routes>
 
+      {/* ====================================== */}
       {/* Footer */}
+      {/* ====================================== */}
+
       <Footer />
     </>
   );

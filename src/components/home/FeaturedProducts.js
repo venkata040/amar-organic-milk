@@ -1,45 +1,113 @@
+import { useNavigate } from "react-router-dom";
 import "./FeaturedProducts.css";
 
-function FeaturedProducts() {
+function FeaturedProducts({ cart, setCart }) {
+  const navigate = useNavigate();
+
+  // ======================================
+  // Buy Product
+  // ======================================
+  const handleBuyNow = (product) => {
+    const existingProduct = cart.find(
+      (item) => item.id === product.id
+    );
+
+    let updatedCart;
+
+    if (existingProduct) {
+      updatedCart = cart.map((item) =>
+        item.id === product.id
+          ? {
+              ...item,
+              quantity: item.quantity + 1,
+            }
+          : item
+      );
+    } else {
+      updatedCart = [
+        ...cart,
+        {
+          ...product,
+          quantity: 1,
+        },
+      ];
+    }
+
+    // Update cart
+    setCart(updatedCart);
+
+    // Go directly to checkout
+    navigate("/checkout");
+  };
+
+  // ======================================
+  // Products
+  // ======================================
+  const products = [
+    {
+      id: 1,
+      name: "Cow Milk",
+      description: "Fresh organic cow milk.",
+      price: "$4.99 / Litre",
+      image: "🥛",
+    },
+    {
+      id: 2,
+      name: "Buffalo Milk",
+      description: "Rich and creamy buffalo milk.",
+      price: "$5.99 / Litre",
+      image: "🥛",
+    },
+    {
+      id: 3,
+      name: "Curd",
+      description: "Healthy homemade curd.",
+      price: "$6.99 / Pack",
+      image: "🥣",
+    },
+    {
+      id: 4,
+      name: "Ghee",
+      description: "Pure organic cow ghee.",
+      price: "$18.99 / Jar",
+      image: "🧈",
+    },
+  ];
+
   return (
-    <section className="products">
+    <section className="featured-products">
+
       <h2>Our Fresh Products</h2>
 
       <div className="product-container">
 
-        <div className="product-card">
-          <div className="product-image">🥛</div>
-          <h3>Cow Milk</h3>
-          <p>Fresh organic cow milk.</p>
-          <h4>$4.99 / Litre</h4>
-          <button>Buy Now</button>
-        </div>
+        {products.map((product) => (
+          <div
+            className="product-card"
+            key={product.id}
+          >
 
-        <div className="product-card">
-          <div className="product-image">🥛</div>
-          <h3>Buffalo Milk</h3>
-          <p>Rich and creamy buffalo milk.</p>
-          <h4>$5.99 / Litre</h4>
-          <button>Buy Now</button>
-        </div>
+            <div className="product-image">
+              {product.image}
+            </div>
 
-        <div className="product-card">
-          <div className="product-image">🥣</div>
-          <h3>Curd</h3>
-          <p>Healthy homemade curd.</p>
-          <h4>$6.99 / Pack</h4>
-          <button>Buy Now</button>
-        </div>
+            <h3>{product.name}</h3>
 
-        <div className="product-card">
-          <div className="product-image">🧈</div>
-          <h3>Ghee</h3>
-          <p>Pure organic cow ghee.</p>
-          <h4>$18.99 / Jar</h4>
-          <button>Buy Now</button>
-        </div>
+            <p>{product.description}</p>
+
+            <h4>{product.price}</h4>
+
+            <button
+              onClick={() => handleBuyNow(product)}
+            >
+              🛒 Buy Now
+            </button>
+
+          </div>
+        ))}
 
       </div>
+
     </section>
   );
 }

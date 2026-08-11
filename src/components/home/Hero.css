@@ -1,197 +1,400 @@
-/* ===========================
-   PREMIUM HERO SECTION
-=========================== */
+/* =========================================
+   HERO SECTION
+========================================= */
 
 .hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  min-height: 620px;
 
-    padding: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    background: linear-gradient(135deg, #FAF9F6 0%, #E8F5E9 100%);
+  gap: 60px;
+
+  padding: 80px 8%;
+
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f4fbf4 0%,
+      #ffffff 50%,
+      #eaf7ec 100%
+    );
 }
 
-/* Left Side */
+/* =========================================
+   HERO CONTENT
+========================================= */
 
 .hero-content {
-    width: 55%;
+  flex: 1;
+
+  max-width: 700px;
 }
 
 .hero-tag {
-    display: inline-block;
+  display: inline-block;
 
-    background: #E8F5E9;
+  padding: 10px 18px;
 
-    color: #2E7D32;
+  margin-bottom: 22px;
 
-    padding: 10px 18px;
+  border-radius: 30px;
 
-    border-radius: 25px;
+  background: #e6f4e8;
 
-    font-weight: 600;
+  color: #2e7d32;
 
-    margin-bottom: 25px;
+  font-size: 15px;
+
+  font-weight: 700;
 }
 
-.hero-content h1 {
+/* =========================================
+   HERO HEADING
+========================================= */
 
-    font-size: 62px;
+.hero h1 {
+  margin: 0 0 25px;
 
-    color: #1B5E20;
+  color: #1b5e20;
 
-    line-height: 1.2;
+  font-size: clamp(42px, 5vw, 68px);
 
-    margin-bottom: 25px;
+  line-height: 1.1;
+
+  font-weight: 800;
+
+  letter-spacing: -1px;
 }
 
-.hero-content p {
+/* =========================================
+   HERO DESCRIPTION
+========================================= */
 
-    font-size: 22px;
+.hero p {
+  max-width: 650px;
 
-    color: #555;
+  margin: 0 0 35px;
 
-    line-height: 38px;
+  color: #555;
 
-    margin-bottom: 40px;
+  font-size: 18px;
+
+  line-height: 1.8;
 }
 
-/* Buttons */
+/* =========================================
+   HERO BUTTONS
+========================================= */
 
 .hero-buttons {
+  display: flex;
 
-    display: flex;
+  gap: 16px;
 
-    gap: 20px;
+  flex-wrap: wrap;
 }
 
+.order-btn,
+.learn-btn {
+  border: none;
+
+  padding: 14px 28px;
+
+  border-radius: 30px;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+/* Shop Now */
+
 .order-btn {
+  background: #2e7d32;
 
-    background: #2E7D32;
+  color: #ffffff;
 
-    color: white;
-
-    border: none;
-
-    padding: 16px 34px;
-
-    border-radius: 35px;
-
-    font-size: 18px;
-
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition: .3s;
-
-    box-shadow: 0 8px 20px rgba(46,125,50,.25);
+  box-shadow:
+    0 6px 15px rgba(46, 125, 50, 0.25);
 }
 
 .order-btn:hover {
+  background: #1b5e20;
 
-    transform: translateY(-3px);
+  transform: translateY(-3px);
 
-    background: #1B5E20;
+  box-shadow:
+    0 9px 20px rgba(46, 125, 50, 0.3);
 }
 
+/* Subscribe */
+
 .learn-btn {
+  background: #ffffff;
 
-    background: white;
+  color: #2e7d32;
 
-    color: #2E7D32;
-
-    border: 2px solid #2E7D32;
-
-    padding: 16px 34px;
-
-    border-radius: 35px;
-
-    font-size: 18px;
-
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition: .3s;
+  border: 2px solid #2e7d32;
 }
 
 .learn-btn:hover {
+  background: #2e7d32;
 
-    background: #2E7D32;
+  color: #ffffff;
 
-    color: white;
+  transform: translateY(-3px);
 }
 
-/* Right Side */
+/* =========================================
+   HERO IMAGE / MILK
+========================================= */
 
 .hero-image {
+  position: relative;
 
-    font-size: 240px;
+  width: 390px;
 
-    animation: floatMilk 3s ease-in-out infinite;
+  height: 390px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #ffffff 0%,
+      #eaf7ec 60%,
+      #d6efd9 100%
+    );
+
+  box-shadow:
+    0 20px 50px rgba(46, 125, 50, 0.15);
 }
 
-/* Floating Animation */
+/* Milk emoji */
 
-@keyframes floatMilk {
+.milk-icon {
+  font-size: 150px;
 
-    0% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-15px);
-    }
-
-    100% {
-        transform: translateY(0px);
-    }
-
+  animation: milkFloat 3s ease-in-out infinite;
 }
 
-/* Responsive */
+/* Floating animation */
 
-@media (max-width: 900px) {
+@keyframes milkFloat {
+  0% {
+    transform: translateY(0);
+  }
 
-    .hero {
+  50% {
+    transform: translateY(-12px);
+  }
 
-        flex-direction: column;
+  100% {
+    transform: translateY(0);
+  }
+}
 
-        text-align: center;
+/* =========================================
+   FRESH BADGE
+========================================= */
 
-        padding: 50px 30px;
-    }
+.fresh-badge {
+  position: absolute;
 
-    .hero-content {
+  right: -10px;
 
-        width: 100%;
-    }
+  bottom: 35px;
 
-    .hero-content h1 {
+  padding: 12px 18px;
 
-        font-size: 42px;
-    }
+  background: #2e7d32;
 
-    .hero-content p {
+  color: #ffffff;
 
-        font-size: 18px;
+  border-radius: 30px;
 
-        line-height: 30px;
-    }
+  font-size: 14px;
 
-    .hero-buttons {
+  font-weight: 700;
 
-        justify-content: center;
+  box-shadow:
+    0 8px 20px rgba(46, 125, 50, 0.25);
+}
 
-        flex-wrap: wrap;
-    }
+/* =========================================
+   LARGE TABLETS
+========================================= */
 
-    .hero-image {
+@media (max-width: 1100px) {
+  .hero {
+    padding: 70px 5%;
 
-        margin-top: 40px;
+    gap: 40px;
+  }
 
-        font-size: 160px;
-    }
+  .hero-image {
+    width: 320px;
 
+    height: 320px;
+  }
+
+  .milk-icon {
+    font-size: 120px;
+  }
+}
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (max-width: 850px) {
+  .hero {
+    flex-direction: column;
+
+    text-align: center;
+
+    padding: 60px 25px;
+
+    min-height: auto;
+  }
+
+  .hero-content {
+    max-width: 700px;
+  }
+
+  .hero p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-image {
+    width: 300px;
+
+    height: 300px;
+  }
+
+  .milk-icon {
+    font-size: 110px;
+  }
+
+  .fresh-badge {
+    right: 0;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 45px 18px 55px;
+
+    gap: 40px;
+  }
+
+  .hero-tag {
+    font-size: 12px;
+
+    padding: 8px 12px;
+
+    line-height: 1.5;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+
+    line-height: 1.15;
+
+    letter-spacing: -0.5px;
+  }
+
+  .hero p {
+    font-size: 16px;
+
+    line-height: 1.7;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .order-btn,
+  .learn-btn {
+    width: 100%;
+
+    padding: 14px 20px;
+  }
+
+  .hero-image {
+    width: 250px;
+
+    height: 250px;
+  }
+
+  .milk-icon {
+    font-size: 90px;
+  }
+
+  .fresh-badge {
+    right: -5px;
+
+    bottom: 20px;
+
+    padding: 9px 13px;
+
+    font-size: 12px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+  .hero {
+    padding-left: 14px;
+
+    padding-right: 14px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .hero-image {
+    width: 220px;
+
+    height: 220px;
+  }
+
+  .milk-icon {
+    font-size: 80px;
+  }
 }

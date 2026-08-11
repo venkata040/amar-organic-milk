@@ -11,6 +11,7 @@ const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
 const paymentRoutes = require("./routes/paymentRoutes");
 const settingsRoutes = require("./routes/settingsRoutes");
+const contactRoutes = require("./routes/contactRoutes");
 
 // JWT Middleware
 const authenticateToken = require("./middleware/authMiddleware");
@@ -125,6 +126,8 @@ app.use("/api/settings", settingsRoutes);
 // Protected Authentication Test Route
 // ======================================
 // Any logged-in user can access this route.
+app.use("/api/contact", contactRoutes);
+
 app.get(
   "/api/auth/protected",
   authenticateToken,
