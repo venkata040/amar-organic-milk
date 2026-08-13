@@ -1,70 +1,256 @@
-# Getting Started with Create React App
+# 🥛 Amar Organic Milk
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack e-commerce web application for an organic milk delivery business.
 
-## Available Scripts
+The project allows customers to browse dairy products, add products to a shopping cart, place orders, and manage their accounts. An authenticated admin dashboard provides product, order, customer, payment, and customer-message management.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Live Project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+> Deployment coming soon.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 📌 Project Overview
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Amar Organic Milk was developed as a full-stack application to demonstrate practical software development and DevOps skills.
 
-### `npm run build`
+The application includes:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Customer-facing e-commerce website
+- Product catalogue
+- Shopping cart
+- Checkout and order placement
+- Customer registration and login
+- JWT-based authentication
+- Role-based admin authorization
+- Admin dashboard
+- Product management
+- Order management
+- Customer management
+- Payment records
+- Customer contact messages
+- MySQL database integration
+- RESTful APIs
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# ✨ Features
 
-### `npm run eject`
+## 👤 Customer Features
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Home Page
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Premium responsive navigation
+- Hero section
+- Featured products
+- Why choose us section
+- Subscription plans
+- Customer testimonials
+- About section
+- Contact section
+- Footer
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Products
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Customers can:
 
-## Learn More
+- View available products
+- View product prices
+- Add products to cart
+- Increase/decrease quantities
+- Remove products from cart
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Shopping Cart
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The cart provides:
 
-### Code Splitting
+- Product summary
+- Quantity management
+- Subtotal calculation
+- Total calculation
+- Checkout navigation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Checkout
 
-### Analyzing the Bundle Size
+Customers can provide:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Full name
+- Phone number
+- Email address
+- Delivery address
+- City
+- Postal code
+- Payment method
 
-### Making a Progressive Web App
+Orders are submitted to the backend and stored in MySQL.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+# 🔐 Authentication & Authorization
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The application uses JWT-based authentication.
 
-### Deployment
+### Customer
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Authenticated customers can access customer functionality but cannot access the admin dashboard.
 
-### `npm run build` fails to minify
+### Administrator
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Administrators have access to protected administrative functionality.
+
+Admin authorization is implemented using:
+
+- JWT authentication middleware
+- Admin role middleware
+- Protected React routes
+
+---
+
+# 🛠️ Admin Dashboard
+
+The admin dashboard provides management functionality for:
+
+### 📊 Dashboard
+
+Displays business statistics such as:
+
+- Total orders
+- Today's orders
+- Revenue
+- Customers
+- Other business metrics
+
+### 🥛 Products
+
+Administrators can:
+
+- Add products
+- Edit products
+- Delete products
+- View products
+
+### 📦 Orders
+
+Administrators can:
+
+- View customer orders
+- View order details
+- Update order status
+
+### 👥 Customers
+
+Administrators can:
+
+- View registered customers
+- Search customer information
+- View customer roles
+
+### 💳 Payments
+
+Administrators can view:
+
+- Payment records
+- Payment methods
+- Payment amounts
+- Revenue information
+
+### 📩 Messages
+
+Administrators can:
+
+- View customer enquiries
+- View contact information
+- Mark messages as read/unread
+
+---
+
+# 🏗️ Technology Stack
+
+## Frontend
+
+- React
+- React Router
+- JavaScript
+- HTML5
+- CSS3
+- Fetch API
+
+## Backend
+
+- Node.js
+- Express.js
+- REST APIs
+- JWT Authentication
+- CORS
+- dotenv
+
+## Database
+
+- MySQL
+
+## Development Tools
+
+- Git
+- GitHub
+- Visual Studio Code
+- MySQL Workbench
+- npm
+
+## Cloud / DevOps
+
+The project is designed for deployment using AWS services such as:
+
+- EC2
+- RDS
+- Application Load Balancer
+- Route 53
+- S3
+- IAM
+- CloudWatch
+
+---
+
+# 🏛️ Application Architecture
+
+```text
+                    ┌──────────────────────┐
+                    │      Customer        │
+                    │      Browser         │
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │   React Frontend     │
+                    │                      │
+                    │ Products             │
+                    │ Cart                 │
+                    │ Checkout             │
+                    │ Authentication       │
+                    └──────────┬───────────┘
+                               │
+                         REST API
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │   Node.js / Express  │
+                    │      Backend         │
+                    │                      │
+                    │ Routes               │
+                    │ Controllers          │
+                    │ Middleware           │
+                    │ JWT Authentication   │
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │    MySQL Database    │
+                    │                      │
+                    │ Users                │
+                    │ Products             │
+                    │ Orders               │
+                    │ Order Items          │
+                    │ Payments             │
+                    │ Messages             │
+                    └──────────────────────┘
