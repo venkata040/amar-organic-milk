@@ -107,6 +107,31 @@ Admin authorization is implemented using:
 - Protected React routes
 
 ---
+# 📸 Application Screenshots
+
+## 🏠 Customer Homepage
+
+![Customer Homepage](screenshots/homepage.png)
+
+## 🥛 Products
+
+![Products Page](screenshots/products.png)
+
+## 🛒 Shopping Cart
+
+![Shopping Cart](screenshots/cart.png)
+
+## 📊 Admin Dashboard
+
+![Admin Dashboard](screenshots/admin-dashboard.png)
+
+## 📦 Admin Orders
+
+![Admin Orders](screenshots/admin-orders.png)
+
+## 👥 Admin Customers
+
+![Admin Customers](screenshots/admin-customers.png)
 
 # 🛠️ Admin Dashboard
 
