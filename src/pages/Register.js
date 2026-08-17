@@ -29,7 +29,7 @@ function Register() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/auth/register",
+        "http://13.236.60.104:5000/api/auth/register",
         {
           method: "POST",
           headers: {

@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/orders";
+const API_URL = "http://13.236.60.104:5000/api/orders";
 
 export const placeOrder = async (orderData) => {
   const response = await fetch(API_URL, {

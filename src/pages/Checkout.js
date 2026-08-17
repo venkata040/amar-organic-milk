@@ -91,7 +91,7 @@ function Checkout({ cart, setCart }) {
       // Send Order With JWT Token
       // ======================================
       const response = await fetch(
-        "http://localhost:5000/api/orders",
+        "http://13.236.60.104:5000/api/orders",
         {
           method: "POST",
 

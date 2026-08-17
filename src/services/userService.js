@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/users";
+const API_URL = "http://13.236.60.104:5000/api/users";
 
 // ======================================
 // Get All Customers
