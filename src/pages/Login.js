@@ -21,7 +21,7 @@ function Login() {
 
     try {
       const response = await fetch(
-        "http://13.236.60.104:5000/api/auth/login",
+        `${process.env.REACT_APP_API_URL}/api/auth/login`,
         {
           method: "POST",
           headers: {

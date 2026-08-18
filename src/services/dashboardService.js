@@ -1,4 +1,4 @@
-const API_URL = "http://13.236.60.104:5000/api/dashboard";
+const API_URL = `${process.env.REACT_APP_API_URL}/api/dashboard`;
 
 export const getDashboardStats = async () => {
   const token = localStorage.getItem("token");

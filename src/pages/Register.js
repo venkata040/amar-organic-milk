@@ -29,7 +29,7 @@ function Register() {
 
     try {
       const response = await fetch(
-        "http://13.236.60.104:5000/api/auth/register",
+        `${process.env.REACT_APP_API_URL}/api/auth/register`,
         {
           method: "POST",
           headers: {

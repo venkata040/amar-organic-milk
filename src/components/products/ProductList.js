@@ -19,7 +19,7 @@ function ProductList({ cart, setCart }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://13.236.60.104:5000/api/products")
+    fetch(`${process.env.REACT_APP_API_URL}/api/products`)
       .then((response) => response.json())
       .then((data) => {
         const updatedProducts = data.products.map((product) => ({
